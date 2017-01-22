@@ -24,9 +24,9 @@
 %   Define common stuff for solution headers
 % =====================================================
 \Class{CS/ECE 374}
-\Semester{}
+\Semester{Spring 2017}
 \Authors{1}
-\AuthorOne{Birgit Alitz}{alitz2@illinois.edu}
+\AuthorOne{Birgit Alitz}{alitz2}
 %\Section{}
 
 % =====================================================
@@ -54,8 +54,10 @@ Let $G=(V,E)$ be an undirected graph. Unless we say otherwise, a graph has no lo
 \begin{solution}
 \item 
 \begin{enumerate}[(a)]
+\item In a graph with $|V| \ge 2$, the number of degrees of any vertex has to be between 0 and $|V| - 1 $ because the definition of an edge requires it to exist between two vertices. This means that there are $|V|$ different options for numbers of degrees that each vertex can have. However, in the case of vertices, none of the vertices can have degree $|V| -1$ because that would force there to be no vertex with degree 0. 
+This leaves $|V| - 1$ different options for number of degrees for $|V|$ different vertices. In order for no two vertices to have the same number of degrees, each of the $|V| \ge 2$ vertices has to have a different number of degrees, but since there are only $|V| - 1$ options, there have to be at least two with the same number by the pigeon-hole principle.
 \item
-\item
+A graph with $n = 1$ edges, there are at least two vertices, as per the definition of an edge. For every consequential edge added, in a graph with no parallel edges and no loops, at least one vertex has to be added. Thus, in a graph with $n$ edges, there are at least $n+1$ vertices.  In order for all of the vertices connected to edges to have a different number of degrees, they have to have between 1 and n degrees (as a vertex with degree zero would be unconnected to the path). However, for the n edges, there are n+1 connected vertices, so again, by the pidgeon-hole principle, two of the vertices must have the same degree.
 \end{enumerate}
 \end{solution}
 
@@ -67,7 +69,7 @@ Let $G=(V,E)$ be an undirected graph. Unless we say otherwise, a graph has no lo
 \HomeworkHeader{0}{2}
 
 \begin{quote}
-\item The \EMPH{plus one}, $w^+$, of a string $w \in \set{\Sym0,\Sym1, \Sym2}^*$ is obtained from $w$ by replacing each symbol $a$ in $w$ by the symbol corresponding $a+1 \mod 3$. for example, $\Sym{0102101}^+ = \Sym{1210212}$.  The plus one function is formally defined as follows:
+\item The \EMPH{plus one}, $w^+$, of a string $w \in \set{\Sym0,\Sym1, \Sym2}^*$ is obtained from $w$ by replacing each symbol $a$ in $w$ by the symbol corresponding $a+1 \mod 3$. For example, $\Sym{0102101}^+ = \Sym{1210212}$.  The plus one function is formally defined as follows:
 \[
 	w^+ := \begin{cases}
 		\e & \text{if $w=\e$}\\
@@ -93,48 +95,17 @@ plus one $w^+$.  Do not appeal to intuition!
 \begin{solution}
 \begin{quote}
 \item
-\textbf{Inductive Bases:} \begin{center}$x$ or $y  = \epsilon$\end{center}
-\item By definition of concatenation, if $x$ is $\epsilon$, then $x \Cdot y = y$.
-\begin{center}
- $(x \Cdot y)^+ = (y)^+$
-\item $\epsilon ^+  = \epsilon$
+\textbf{Inductive Base:} \begin{center}$x = \epsilon$\end{center}
+ $(x \Cdot y)^+ = (y)^+$ by definition of concatenation with $x = \epsilon$
+\item $\epsilon ^+  = \epsilon$ from the definition of $\textbf{\emph{plus one}}$
 \item $(x \Cdot y)^+= \epsilon ^+ \Cdot y^+ = x^+ \Cdot y^+$ 
-\end{center}
-\item The same is true if x and y are switched in the above.
-\begin{center}
-$\abs{x}$ or $\abs{y} = 1$
-\end{center}
-This case is covered in the definition of $w^+$ for all possible $x$ ($x = \Sym0, \Sym1, \Sym2$). In the case of $y$,
-\end{quote}
-
-
-
 \item
-Yo, stop at the deli. The theater's over-priced. You've got the backpack? Gonna pack it up nice.  Don't want security to get suspicious.
-\[
-	\mfbox{\text{Mr. Pibb} + \text{Red Vines} = \text{\emph{crazy delicious!}}}
-\]
-
-I’ll reach in my pocket, pull out some dough.  Girl actin' like she never seen a ten before.  \textcolor{Green}{\textbf{It's all about the \textsf{Hamiltons}, baby.}} Throw the snacks in a bag, and I’m \textcolor{Gray}{ghost \small like \footnotesize Swayze.}
-
-\end{enumerate}
-Roll up to the theater, ticket buying, what we’re handlin’.  You can call us Aaron Burr from the way we’re \raisebox{-1ex}{droppin’} \raisebox{-2ex}{Hamiltons.}
-
-\begin{algo}
-	\textul{$\textsc{MovieTrivia}(\textit{question}[1\,..\,n])$:}\+
-\\	$\textit{illest} \gets \textsc{True}$
-\\	for $i \gets 1$ to $n$\+
-\\		if $\textit{question}[i] = $ “\textsf{Which Friends alum starred in f{}ilms with Bruce Willis?}”\+
-\\			$\textit{speed} \gets \infty$
-\\			$\textit{scary} \gets \textsc{True}$
-\\			Shout  “\textsf{Matthew Perry!}”\-\-
-\\[0.5ex]	% vertical space
-	if $\textit{quiet} \not\in \textit{theater}$\+
-\\		$\textit{tragic} \gets \textsc{True}$\-
-\\[0.5ex]
-	return $\textsc{DreamWorld}(\textit{magic})$
-\end{algo}
+\textbf{Inductive Hypothesis:}
+\item $\forall$ strings $w$ with $|w| < n$, and all strings $y \in \Sigma^\ast$, $(w \Cdot y)^+ = w^+ \Cdot y^+$
+\end{quote}
 \end{solution}
+\hrule
+
 
 % ---------------------------------------------------------
 
