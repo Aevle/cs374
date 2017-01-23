@@ -101,7 +101,26 @@ plus one $w^+$.  Do not appeal to intuition!
 \item $(x \Cdot y)^+= \epsilon ^+ \Cdot y^+ = x^+ \Cdot y^+$ 
 \item
 \textbf{Inductive Hypothesis:}
-\item $\forall$ strings $w$ with $|w| < n$, and all strings $y \in \Sigma^\ast$, $(w \Cdot y)^+ = w^+ \Cdot y^+$
+\item $\forall$ strings $w$ with $|w| = k < n$, and all strings $y \in \Sigma^\ast$, $(w \Cdot y)^+ = w^+ \Cdot y^+$
+\item
+\textbf{Inductive Step:}
+For string x, with $|x| = n$ greater than arbitrary $k$, $x$ can be written as $aw$, where $a \in \set{\Sym0, \Sym1, \Sym2}$ and $w$ is a string in the language $ \set{\Sym0,\Sym1, \Sym2}^*$ with $|w| =  k$ for which the inductive hypothesis holds.
+\begin{center}
+\item
+$(x \Cdot y)^+ = ((a \Cdot w) \Cdot y)^+$ by definition of string length
+\item
+$((a \Cdot w) \Cdot y)^+ = (a \Cdot (w \Cdot y))^+$ by concatenation lemma
+\item
+$(a \Cdot (w \Cdot y))^+ = a^+ \Cdot (w \Cdot y)^+$ definition of $\textbf{\emph{plus one}}$
+\item
+$ a^+ \Cdot (w \Cdot y)^+ =  a^+ \Cdot (w^+ \Cdot y^+$) by inductive hypothesis
+\item 
+$ a^+ \Cdot (w^+ \Cdot y^+) = ( a^+ \Cdot w^+) \Cdot y^+$ by concatenation lemma
+\item
+$( a^+ \Cdot w^+) \Cdot y^+ = x^+ \Cdot y^+$ by declaration of $x$ and definition of $\textbf{\emph{plus one}}$
+\item 
+Thus, $(x \Cdot y)^+ = x^+ \Cdot y^+$.
+\end{center}
 \end{quote}
 \end{solution}
 \hrule
