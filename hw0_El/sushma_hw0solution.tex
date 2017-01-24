@@ -26,7 +26,7 @@
 \Class{CS/ECE 374}
 \Semester{Spring 2017}
 \Authors{1}
-\AuthorOne{Birgit Alitz}{alitz2}
+\AuthorOne{Sushma Adari}{sadari2}
 %\Section{}
 
 % =====================================================
@@ -54,10 +54,8 @@ Let $G=(V,E)$ be an undirected graph. Unless we say otherwise, a graph has no lo
 \begin{solution}
 \item 
 \begin{enumerate}[(a)]
-\item In a graph with $|V| \ge 2$, the number of degrees of any vertex has to be between 0 and $|V| - 1 $ because the definition of an edge requires it to exist between two vertices. This means that there are $|V|$ different options for numbers of degrees that each vertex can have. However, in the case of vertices, none of the vertices can have degree $|V| -1$ because that would force there to be no vertex with degree 0. 
-This leaves $|V| - 1$ different options for number of degrees for $|V|$ different vertices. In order for no two vertices to have the same number of degrees, each of the $|V| \ge 2$ vertices has to have a different number of degrees, but since there are only $|V| - 1$ options, there have to be at least two with the same number by the pigeon-hole principle.
-\item
-A graph with number of edges $n \ge 1$ has, by definition of an edge, at least two vertices, and contains a connected component, which we can consider a subgraph for the remainder of this problem. Since there are $|V| \ge 2|$ vertices in the connected subgraph, the proof from the previous problem applies, confirming that at least two of the vertices in the subgraph have the same degree. Furthermore, from knowing that the subgraph is connected, we know that there exists a path between these two unique vertices with the same degree as per the definition of connected. 
+\item The graph $G = (V,E)$ has a number of vertices $n \ge 2$, in the case where $n=2$ each distinct node $u$ and $v$ can either both have a degree of $1$ or a degree of $0$, since they can either be connected or unconnected. For every proceeding case the degree of the vertices in $G$, given $n$ nodes, can be any value between $0$ and $n-1$ since no loops or parallel edges exist in $G$. There are n options for n-1 nodes . Now consider $G$  has an arbitrary node, $A$, with degree $0$ none of the remaining nodes can have a degree of $n-1$ since it would require a shared edge with $A$. The remaining $n-1$ nodes' degrees can  be any value between 1 and n-2 so there are n-1 options for n-2 nodes. According to the pidgeon hole principle, at least $2$ of the nodes $u$ and $v$ must have the same degree in the graph $G$.
+\item The graph $G = (V,E)$ has a number of edges $n$ where $n \ge 1$ and therefore by definition graph $G$ has a connected component that has at least two vertices. Applying the proof in part a to this connected component shows that there are at least two vertices in the connected componenet that have the same degree and by definition between these two vertices, since they are unique, there exists a path. 
 \end{enumerate}
 \end{solution}
 
@@ -95,11 +93,12 @@ plus one $w^+$.  Do not appeal to intuition!
 \begin{solution}
 \begin{quote}
 \item
-\textbf{Inductive Base:} $x = \epsilon$
-\begin{center} $(x \Cdot y)^+ = (y)^+$ by definition of concatenation with $x = \epsilon$ 
-\item $\epsilon ^+  = \epsilon$ from the definition of $\textbf{\emph{plus one}}$
-\item $(x \Cdot y)^+= \epsilon ^+ \Cdot y^+ = x^+ \Cdot y^+$ 
-\end{center}
+\textbf{Base Case:} Let $x$ be an arbitrary string of length $0$ let $x = \epsilon$
+\begin{align*}
+ \item $(x\Cdot y)^+ =(\epsilon \Cdot y)^+ = (y)^+ = y^+$
+\item $ = \epsilon \Cdot y^+ =  \epsilon ^+ \Cdot y^+ = x^+ \Cdot y^+$
+\end{align*}
+\item
 \textbf{Inductive Hypothesis:}
 \item $\forall$ strings $w$ with $|w| = k < n$, and all strings $y \in \Sigma^\ast$, $(w \Cdot y)^+ = w^+ \Cdot y^+$
 \item
@@ -158,26 +157,30 @@ $L_n \subseteq D$, and hence $L \subseteq D$.
 \hrule
 
 
-\begin{solution}[1]
-\item
-\textbf{Inductive Bases (a):} 
-\begin{itemize}
-\item For $a = 0$: $0\textbf{u} = 0$; $0 \in L_0$ by definition of $L_0$, so $\forall D| a = 0$, $a\textbf{u} \subseteq L$
-\item For $a = 1$: $1\textbf{u} = \textbf{u}$; $u \in L_0$ by definition of $L_0$, so $\forall D| a = 1$, $a\textbf{u} \subseteq L$
-\item For $a = -1$: $-1\textbf{u} = -\textbf{u}$; $-\textbf{u} \in L_{|-1|}$, so $\forall D| a = -1$, $a\textbf{u} \subseteq L$
-\begin{itemize}
-\item Since $0,$ $\textbf{u}$ are in $L_0$, $0-\textbf{u} = -\textbf{u} \in L_1$ by definition of $L_n$
-\end{itemize} 
-\end{itemize}
-\textbf{Inductive Hypothesis:}
-\begin{itemize}
-\item $\forall k$ with $ 1 < |k| < |n|$, $\pm k\textbf{u} \in L_{|k|}$
-\end{itemize}
-\textbf{Inductive Step:}
-\item Proving that $D \subseteq L$ for all $a$: 
+\begin{solution}[induction]
+Let $k$ be an arbitrary non-negative integer. There are several cases to consider:
 \begin{itemize}
 \item
+Blah
+
+\item
+Snort
+\begin{itemize}
+\item
+Squee
+
+\item
+Flub
 \end{itemize}
+
+\item
+Kronk
+\end{itemize}
+In all cases, we conclude that when $k$ 5-card poker hands are dealt from a standard shuffled deck, the player with the Big Blind gets the cards \textsf{7\Spade}, \textsf{4\Diamond}, \textsf{5\Heart}, \textsf{3\Club}, and \textsf{2\Heart} with probability $(\sqrt{5}-1)/2 = 0.618033989$.
+\end{solution}
+
+\begin{solution}[combinatorial]
+This result follows immediately from Flobbersnort’s Fundamental Theorem of negative-dimensional motivic $k$-schemes, which is in turn an obvious consequence of  Flibbertygibbet’s Cocohohomomolology Lemma, as described in footnote 17 on the back of page 213 of the 1865 edition of Jeff’s induction notes (in the original Flemish).
 \end{solution}
 
 
