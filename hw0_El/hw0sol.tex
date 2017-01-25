@@ -160,11 +160,21 @@ $L_n \subseteq D$, and hence $L \subseteq D$.
 
 \begin{solution}[1]
 \item
-\textbf{Inductive Bases (a):} 
+\textbf{Inductive Bases (x):} 
+\item In the case $D = \{x\textbf{u} + y\textbf{v}$ $|$ $x, y \in \Z\}$
 \begin{itemize}
-\item For $a = 0$: $0\textbf{u} = 0$; $0 \in L_0$ by definition of $L_0$, so $\forall D| a = 0$, $a\textbf{u} \subseteq L$
-\item For $a = 1$: $1\textbf{u} = \textbf{u}$; $u \in L_0$ by definition of $L_0$, so $\forall D| a = 1$, $a\textbf{u} \subseteq L$
-\item For $a = -1$: $-1\textbf{u} = -\textbf{u}$; $-\textbf{u} \in L_{|-1|}$, so $\forall D| a = -1$, $a\textbf{u} \subseteq L$
+\item For $x = 0$: $0\textbf{u} = 0$; $0 \in L_0$ by definition of $L_0$, so $\forall D| x = 0$, $x\textbf{u} \subseteq L$
+\item For $x = 1$: $1\textbf{u} = \textbf{u}$; $u \in L_0$ by definition of $L_0$, so $\forall D| x = 1$, $x\textbf{u} \subseteq L$
+\item For $x = -1$: $-1\textbf{u} = -\textbf{u}$; $-\textbf{u} \in L_{|-1|}$, so $\forall D| x = -1$, $x\textbf{u} \subseteq L$
+\begin{itemize}
+\item Since $0,$ $\textbf{u}$ are in $L_0$, $0-\textbf{u} = -\textbf{u} \in L_1$ by definition of $L_n$
+\end{itemize} 
+\end{itemize}
+\textbf{Inductive Bases (y):} 
+\begin{itemize}
+\item For $x = 0$: $0\textbf{v} = 0$; $0 \in L_0$ by definition of $L_0$, so $\forall D| y = 0$, $y\textbf{v} \subseteq L$
+\item For $x = 1$: $1\textbf{v} = \textbf{v}$; $u \in L_0$ by definition of $L_0$, so $\forall D| y = 1$, $y\textbf{v} \subseteq L$
+\item For $x = -1$: $-1\textbf{v} = -\textbf{v}$; $-\textbf{u} \in L_{|-1|}$, so $\forall D| y = -1$, $y\textbf{v} \subseteq L$
 \begin{itemize}
 \item Since $0,$ $\textbf{u}$ are in $L_0$, $0-\textbf{u} = -\textbf{u} \in L_1$ by definition of $L_n$
 \end{itemize} 
@@ -174,9 +184,18 @@ $L_n \subseteq D$, and hence $L \subseteq D$.
 \item $\forall k$ with $ 1 < |k| < |n|$, $\pm k\textbf{u} \in L_{|k|}$
 \end{itemize}
 \textbf{Inductive Step:}
-\item Proving that $D \subseteq L$ for all $a$: 
+\item Proving that $D \subseteq L_x$ for each $x\textbf{u}$
 \begin{itemize}
-\item
+\item 
+\end{itemize}
+\item Proving that $D \subseteq L_y$ for each $y\textbf{v}$
+\begin{itemize}
+\item 
+\end{itemize}
+\item Proving that, consequently, $D \subseteq L_{max(x,y) + 1}$ for all $D = \{ x{\bf u}+y{\bf
+  v} \mid x,y \in \Z \}$ 
+\begin{itemize}
+\item 
 \end{itemize}
 \end{solution}
 
